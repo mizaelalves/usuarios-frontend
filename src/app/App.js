@@ -9,9 +9,9 @@ export default function App() {
   const [data, setData] = useState([]);
   const [q, setQ] = useState("");
 
-  async function search(rows) {
+  function search(rows) {
     const columns = rows[0] && Object.keys(rows[0]);
-    return await rows.filter((row) =>
+    return rows.filter((row) =>
       columns.some(
         (column) =>
           row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
@@ -31,6 +31,9 @@ export default function App() {
       <div>
         <div className="search">
           <input className="searchTerm" type="text" value={q} onChange={(e) => setQ(e.target.value)} />
+        </div>
+        <div className="button">
+          <button className="searchButton">Criar usuário</button>
         </div>
         <div className='table'>
           <Datatable data={search(data)} />
