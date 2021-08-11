@@ -9,7 +9,7 @@
 </h4>
 
 # Clone this repository
-$ git clone <https://github.com/mizaelalves/add-user-vue>
+$ git clone <https://github.com/mizaelalves/usuarios-frontend>
 
 # Access the folder
 $ cd usuarios-frontend
