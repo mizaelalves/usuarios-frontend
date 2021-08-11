@@ -18,10 +18,9 @@ export default function App() {
       )
     );
   }
-
   
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`http://https://users-m.herokuapp.com/users`)
       .then((response) => response.json())
       .then((json) => setData(json));
   }, []);
