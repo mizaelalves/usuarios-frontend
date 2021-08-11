@@ -19,4 +19,6 @@ $ yarn install
 
 # Run application in development mode
 $ yarn start
-$ http://localhost:5000
+
+# Adress
+$ http://localhost:3000
