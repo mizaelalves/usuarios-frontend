@@ -32,9 +32,7 @@ export default function App() {
         <div className="search">
           <input className="searchTerm" type="text" value={q} onChange={(e) => setQ(e.target.value)} />
         </div>
-        <div className="button">
-          <button className="searchButton">Criar usuário</button>
-        </div>
+
         <div className='table'>
           <Datatable data={search(data)} />
         </div>
