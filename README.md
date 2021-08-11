@@ -20,5 +20,5 @@ $ yarn install
 # Run application in development mode
 $ yarn start
 
-# Adress
+# Address
 $ http://localhost:3000
