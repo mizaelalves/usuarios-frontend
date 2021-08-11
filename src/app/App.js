@@ -29,7 +29,7 @@ export default function App() {
     <>
       <div>
         <div className="search">
-          <input className="searchTerm" type="text" value={q} onChange={(e) => setQ(e.target.value)} />
+          <input className="searchTerm" type="text" placeholder="Seu Nome" value={q} onChange={(e) => setQ(e.target.value)} />
         </div>
 
         <div className='table'>
