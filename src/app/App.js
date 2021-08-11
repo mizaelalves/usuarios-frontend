@@ -20,7 +20,7 @@ export default function App() {
   }
   
   useEffect(() => {
-    fetch(`http://https://users-m.herokuapp.com/users`)
+    fetch(`https://users-m.herokuapp.com/users`)
       .then((response) => response.json())
       .then((json) => setData(json));
   }, []);
