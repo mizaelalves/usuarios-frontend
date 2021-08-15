@@ -228,4 +228,9 @@ table th.last {
   border-radius: 10px;
 }
 
+label {
+  font-size: 15px;
+  margin-left: 12px;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { render } from "@testing-library/react";
 const data = {
   name: "",
   age: 0,
@@ -21,11 +22,9 @@ export default function CreateUser() {
         console.log(error);
       });
 
-    return (
-      <div>
-        <h1>Usuario cadastrado</h1>
-      </div>
-    );
+    render(
+      <h1>cadastrado</h1>
+    )
   }
 
   function handle(e) {
@@ -43,6 +42,7 @@ export default function CreateUser() {
       <form className="form">
         <div className="inputs">
           <div className="form-input">
+          <label>Nome</label><br/>
             <input
               className="searchTerm"
               type="text"
@@ -54,6 +54,7 @@ export default function CreateUser() {
             />
           </div>
           <div className="form-input">
+          <label>Idade</label><br/>
             <input
               className="searchTerm"
               type="number"
@@ -65,6 +66,7 @@ export default function CreateUser() {
             />
           </div>
           <div className="form-input">
+          <label>CPF</label><br/>
             <input
               className="searchTerm"
               type="text"
@@ -76,6 +78,7 @@ export default function CreateUser() {
             />
           </div>
           <div className="form-input">
+          <label>Data de nascimento</label><br/>
             <input
               className="searchTerm"
               type="date"
@@ -88,7 +91,8 @@ export default function CreateUser() {
           </div>
         </div>
         <div className="buttons">
-          <button id="form-btn" type="submit" onClick={create}>
+          
+          <button id="form-btn" type="button" onClick={create}>
             Salvar
           </button>
           <Link to="/table">
