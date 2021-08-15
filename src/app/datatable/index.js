@@ -10,6 +10,7 @@ export default function Datatable({ data }) {
     { name: "Data de nascimento" },
   ];
   return (
+    <div className="table">
     <table cellPadding={0} cellSpacing={0}>
       <thead >
         <tr>
@@ -30,5 +31,6 @@ export default function Datatable({ data }) {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }

@@ -1,8 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+html,
 body {
   background: #f2f2f2;
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  height: 100%;
+}
+
+.table {
+  overflow: auto;
 }
 
 table {
@@ -30,6 +37,7 @@ table {
 
   th,
   td {
+
     color: #999;
     border: 1px solid #eee;
     padding: 12px 35px;
@@ -48,13 +56,6 @@ table {
   }
 }
 
-.search {
-
-  position: relative;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
 
 .searchTerm {
   border: 3px solid #555;
@@ -76,8 +77,9 @@ table {
   align-content: center;
   text-align: center;
   left: 34px;
-  .searchButton{
-    
+
+  .searchButton {
+
     margin: 10px;
     margin-bottom: none;
     background-color: #5555;
@@ -87,7 +89,8 @@ table {
     border-radius: 4px;
     cursor: pointer;
   }
-  .searchButton:active{
+
+  .searchButton:active {
     background-color: #555;
   }
 }
@@ -99,4 +102,142 @@ table {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.headerTable {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttonTable {
+  button {
+    background-color: #555;
+    border: none;
+    border-radius: 4px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 15px;
+    color: #eee;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+}
+
+.content {
+
+  padding: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 15rem;
+
+  button {
+    color: white;
+    background-color: #555;
+    border: none;
+    width: 8rem;
+    height: 2rem;
+
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: rgb(140, 140, 140);
+  padding: 24px;
+  border-radius: 10px;
+}
+
+.option button {
+  color: white;
+  background-color: #555;
+  border: none;
+  width: 8rem;
+  height: 2rem;
+  margin: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.option button:hover {
+  background-color: #555;
+  color: white;
+  box-shadow: 1px 2px 4px rgb(0, 0, 0)
+}
+
+.option button:active {
+  background-color: rgb(67, 67, 67);
+}
+
+#form-btn {
+  background-color: rgb(66, 192, 123);
+  margin-top: 10px;
+  transition: all 0.1s;
+}
+
+#form-btn:hover{
+  background-color: rgb(50, 192, 114);
+  color: white;
+  box-shadow: 1px 2px 4px rgb(0, 0, 0);
+}
+#voltar{
+  transition: all 0.1s;
+}
+#voltar-btn:hover,#voltar:hover {
+  background-color: rgb(75, 75, 75);
+  color: white;
+  box-shadow: 1px 2px 4px rgb(0, 0, 0);
+}
+.form {
+  input {
+    margin: 10px;
+    width: 9rem;
+  }
+
+
+
+  #listar-btn{
+    background-color: rgb(75, 105, 204);
+  }
+
+  #listar-btn:hover{
+    background-color: rgb(58, 92, 202);
+    color: white;
+    box-shadow: 1px 2px 4px rgb(0, 0, 0);
+  }
+
+
+}
+
+.buttons{
+  display:grid;
+}
+
+.box{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: rgb(140, 140, 140);
+  padding: 24px;
+  border-radius: 10px;
 }
