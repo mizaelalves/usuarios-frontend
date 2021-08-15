@@ -92,13 +92,11 @@ export default function CreateUser() {
               <br />
               <input
                 className="searchTerm"
-                type="date"
+                type="text"
                 placeholder="dd/mm/aaaa"
                 onChange={(e) => handle(e)}
                 id="date"
                 value={users.date}
-                min="1997-01-01"
-                max="2030-12-31"
                 required
               />
             </div>
