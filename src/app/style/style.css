@@ -184,6 +184,10 @@ table th.last {
   transition: all 0.1s;
 }
 
+.buttons #form-btn:active {
+  background-color: #248550;
+}
+
 #form-btn:hover {
   background-color: #32c072;
   color: white;
@@ -194,7 +198,7 @@ table th.last {
   transition: all 0.1s;
 }
 
-#voltar-btn:hover, #voltar:hover {
+#voltar-btn:hover {
   background-color: #4b4b4b;
   color: white;
   box-shadow: 1px 2px 4px black;

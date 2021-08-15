@@ -7,15 +7,18 @@ body {
   margin: 0;
   height: 100%;
 }
-@media(max-width: 600px){
-  body{
+
+@media(max-width: 600px) {
+  body {
     background-color: rgb(140, 140, 140);
     color: white;
   }
-  body .box-table{
+
+  body .box-table {
     background-color: white;
   }
 }
+
 .table {
   overflow: auto;
 }
@@ -145,7 +148,7 @@ table {
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 15rem;
@@ -203,20 +206,26 @@ table {
   margin-right: 10px;
   transition: all 0.1s;
 }
+.buttons #form-btn:active{
+  background-color: rgb(36, 133, 80);
+}
 
-#form-btn:hover{
+#form-btn:hover {
   background-color: rgb(50, 192, 114);
   color: white;
   box-shadow: 1px 2px 4px rgb(0, 0, 0);
 }
-#voltar{
+
+#voltar {
   transition: all 0.1s;
 }
-#voltar-btn:hover,#voltar:hover {
+
+#voltar-btn:hover {
   background-color: rgb(75, 75, 75);
   color: white;
   box-shadow: 1px 2px 4px rgb(0, 0, 0);
 }
+
 .form {
   input {
     margin: 10px;
@@ -225,11 +234,11 @@ table {
 
 
 
-  #listar-btn{
+  #listar-btn {
     background-color: rgb(75, 105, 204);
   }
 
-  #listar-btn:hover{
+  #listar-btn:hover {
     background-color: rgb(58, 92, 202);
     color: white;
     box-shadow: 1px 2px 4px rgb(0, 0, 0);
@@ -238,12 +247,12 @@ table {
 
 }
 
-.buttons{
-  display:grid;
+.buttons {
+  display: grid;
   padding-top: 22px;
 }
 
-.box{
+.box {
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -253,7 +262,8 @@ table {
   padding: 24px;
   border-radius: 10px;
 }
-label{
+
+label {
   font-size: 14px;
   margin-left: 12px;
   margin-bottom: 2px;
