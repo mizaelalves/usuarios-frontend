@@ -240,6 +240,7 @@ table {
 
 .buttons{
   display:grid;
+  padding-top: 22px;
 }
 
 .box{
@@ -253,6 +254,10 @@ table {
   border-radius: 10px;
 }
 label{
-  font-size: 15px;
+  font-size: 14px;
   margin-left: 12px;
+  margin-bottom: 2px;
+  position: relative;
+  top: 10px;
+
 }
