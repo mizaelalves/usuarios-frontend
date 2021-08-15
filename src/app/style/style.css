@@ -7,6 +7,16 @@ body {
   height: 100%;
 }
 
+@media (max-width: 600px) {
+  body {
+    background-color: #8c8c8c;
+    color: white;
+  }
+
+  body .box-table {
+    background-color: white;
+  }
+}
 .table {
   overflow: auto;
 }
@@ -50,6 +60,7 @@ table th.last {
   border-radius: 5px;
   outline: none;
   color: #000000;
+  margin: 0 5px;
 }
 
 .searchTerm:focus {
@@ -104,7 +115,8 @@ table th.last {
   font-size: 15px;
   color: #eee;
   cursor: pointer;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .content {
@@ -168,6 +180,7 @@ table th.last {
 #form-btn {
   background-color: #42c07b;
   margin-top: 10px;
+  margin-right: 10px;
   transition: all 0.1s;
 }
 

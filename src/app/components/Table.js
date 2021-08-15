@@ -33,7 +33,7 @@ export default function Table() {
 
   return (
     <>
-      <div>
+      <div className="box-table">
         <div className="headerTable">
         <div className="buttonTable">
           <Link to="/">
