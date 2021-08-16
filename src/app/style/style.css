@@ -9,12 +9,12 @@ body {
 
 @media (max-width: 600px) {
   body {
-    background-color: #8c8c8c;
     color: white;
   }
 
-  body .box-table {
-    background-color: white;
+  .content {
+    height: 100%;
+    background-color: #8c8c8c;
   }
 }
 .table {

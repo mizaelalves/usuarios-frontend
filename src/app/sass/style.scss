@@ -10,12 +10,11 @@ body {
 
 @media(max-width: 600px) {
   body {
-    background-color: rgb(140, 140, 140);
     color: white;
   }
-
-  body .box-table {
-    background-color: white;
+  .content{
+    height: 100%;
+    background-color: rgb(140, 140, 140);
   }
 }
 

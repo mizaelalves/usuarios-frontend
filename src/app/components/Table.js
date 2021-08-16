@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Datatable from "../datatable/index";
 import axios from "axios";
+import Loadind from "./Loading"
 
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
@@ -28,6 +29,7 @@ export default function Table() {
         .then((res) => {
           console.log(res);
           setData(res.data);
+          setLoading(true)
         });
     } catch (e) {
       console.log(e);
@@ -61,7 +63,9 @@ export default function Table() {
           </div>
         </div>
         <div className="table">
-          <Datatable data={search(data)} />
+          {loading ? (<Datatable data={search(data)} />) : (
+            <Loadind/>
+          )}
         </div>
       </div>
     </>
