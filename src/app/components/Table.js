@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Datatable from "../datatable/index";
-
+import axios from "axios";
 
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
@@ -9,9 +9,9 @@ require("isomorphic-fetch");
 export default function Table() {
   const [data, setData] = useState([]);
   const [q, setQ] = useState("");
-  
+  const [loading, setLoading] = useState(false);
+
   function search(rows) {
-    
     const columns = rows[0] && Object.keys(rows[0]);
     return rows.filter((row) =>
       columns.some(
@@ -21,41 +21,47 @@ export default function Table() {
     );
   }
 
-
+  const dataTable = async () => {
+    try {
+      const data = await axios
+        .get("https://users-m.herokuapp.com/users")
+        .then((res) => {
+          console.log(res);
+          setData(res.data);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   useEffect(() => {
-    fetch(`https://users-m.herokuapp.com/users`)
-      .then((response) => response.json())
-      .then((json) => setData(json));
+    dataTable()
   }, []);
-
-
 
   return (
     <>
       <div className="box-table">
         <div className="headerTable">
-        <div className="buttonTable">
-          <Link to="/">
-            <button id="voltar">Voltar</button>
-          </Link>
-          <Link to="/create">
-            <button id="form-btn">Cadastrar</button>
-          </Link>
-        </div>
-        <div className="search">
-          <input
-            className="searchTerm"
-            type="text"
-            placeholder="Nome"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
-        </div>
+          <div className="buttonTable">
+            <Link to="/">
+              <button id="voltar">Voltar</button>
+            </Link>
+            <Link to="/create">
+              <button id="form-btn">Cadastrar</button>
+            </Link>
+          </div>
+          <div className="search">
+            <input
+              className="searchTerm"
+              type="text"
+              placeholder="Nome"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+            />
+          </div>
         </div>
         <div className="table">
           <Datatable data={search(data)} />
-          
         </div>
       </div>
     </>
