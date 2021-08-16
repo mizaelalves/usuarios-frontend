@@ -24,7 +24,7 @@ export default function Table() {
 
   const dataTable = async () => {
     try {
-      const data = await axios
+      await axios
         .get("https://users-m.herokuapp.com/users")
         .then((res) => {
           console.log(res);

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Table from "./Table"
+
 
 const data = {
   name: "",
@@ -14,7 +14,7 @@ const data = {
 
 export default function CreateUser() {
   const [users, setUser] = useState(data);
-  const [loading, setLoading] = useState(false);
+
   
   const notify = () => {
     if (users.name !== "") {
