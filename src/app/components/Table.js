@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Datatable from "../datatable/index";
 import axios from "axios";
-import Loadind from "./Loading"
+import Loadind from "./Loading";
 
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
@@ -24,20 +24,17 @@ export default function Table() {
 
   const dataTable = async () => {
     try {
-      await axios
-        .get("https://users-m.herokuapp.com/users")
-        .then((res) => {
-          console.log(res);
-          setData(res.data);
-          setLoading(true)
-        });
+      await axios.get("https://users-m.herokuapp.com/users").then((res) => {
+        setData(res.data);
+        setLoading(true);
+      });
     } catch (e) {
       console.log(e);
     }
   };
 
   useEffect(() => {
-    dataTable()
+    dataTable();
   }, []);
 
   return (
@@ -63,9 +60,7 @@ export default function Table() {
           </div>
         </div>
         <div className="table">
-          {loading ? (<Datatable data={search(data)} />) : (
-            <Loadind/>
-          )}
+          {loading ? <Datatable data={search(data)} /> : <Loadind />}
         </div>
       </div>
     </>

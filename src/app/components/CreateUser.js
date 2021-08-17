@@ -4,7 +4,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const data = {
   name: "",
   age: 0,
@@ -15,25 +14,27 @@ const data = {
 export default function CreateUser() {
   const [users, setUser] = useState(data);
 
-  
-  const notify = () => {
-    if (users.name !== "") {
-      toast.success("Usuario " + users.name + " criado!", {
-        position: "top-center",
-      });
-    }
-  };
-
   async function create() {
     axios
       .post("https://users-m.herokuapp.com/users", users)
-      .then(function (response) {
-        console.log(response);
-      })
+      .then(function (response) {})
       .catch(function (error) {
         console.log(error);
       });
-    notify();
+  }
+
+  function verify() {
+    if ((users.name && users.date) !== "" && (users.age && users.cpf) > 0) {
+      toast.success("Usuario " + users.name + " criado!", {
+        position: "top-center",
+      });
+      create();
+    } else {
+      toast.error("Porfavor informe todos os campos!", {
+        position: "top-center",
+      });
+      console.log("erro ao cadastrar");
+    }
   }
 
   function handle(e) {
@@ -41,7 +42,6 @@ export default function CreateUser() {
     newUser[e.target.id] = e.target.value;
 
     setUser(newUser);
-    console.log(newUser);
   }
 
   return (
@@ -104,7 +104,7 @@ export default function CreateUser() {
             </div>
           </div>
           <div className="buttons">
-            <button id="form-btn" type="button" onClick={create}>
+            <button id="form-btn" type="button" onClick={verify}>
               Salvar
             </button>
 
